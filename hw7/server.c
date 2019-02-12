@@ -15,7 +15,7 @@ void error(char *msg) {
     exit(1);
 }
 
-#define num_clients 10000
+const int num_clients = 10000;
 int clients_fd[num_clients];
 
 void send_fd(int socket, int fd)  // send fd by socket
@@ -94,7 +94,7 @@ int main(int argc, char *argv[]) {
         error("epoll_create");
     }
 
-    int MAX = 100;
+    const int MAX = 100;
     struct epoll_event ev, events[MAX];
     ev.data.fd = serverSocket;
     ev.events = EPOLLIN;

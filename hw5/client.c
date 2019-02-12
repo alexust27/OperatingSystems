@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 
+const int buf_size = 256;
 
 void error(char *msg) {
     perror(msg);
@@ -19,7 +20,7 @@ int main(int argc, char *argv[]) {
     struct sockaddr_in serv_addr;
     struct hostent *server;
 
-    char buffer[256];
+    char buffer[bu];
 
     if (argc == 0) {
         fprintf(stderr, "please type the address\n");
